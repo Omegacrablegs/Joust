@@ -1,0 +1,140 @@
+<html>
+<head>
+</head>
+<body>
+
+
+<div id="placeholder">
+	 <form onsubmit="event.preventDefault(); doLogin();">
+
+
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username"  id="uname" required>
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" id="pass" required>
+
+    <button type="submit" >Login</button>
+
+	</form>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+<script>
+
+//INSTRUCTIONS:
+//create a new project in firebase after signing up to google
+//go to realtime database, get started
+//go to authentication and set up sign in method.
+//enable email/password login
+//then click on users and manually add a test user
+//to get the apiKey, go to the gear icon on the top left -> project settings
+//you can also see the project name there
+//when the user is logged in, you can see their uid on the console.
+
+/*With the settings below, you can use the account
+uname: test@test.com
+pass: atesttest
+
+the uid will be UxWDVn7R0SM1DEytM4MnO174wiw1
+*/
+
+
+
+
+  // Initialize Firebase
+  // TODO: Replace with your project's customized code snippet
+
+	var config = {
+	apiKey: "AIzaSyDYoo1Aq-XSfHHtV_-PdJImtcw2cdm-GDU",
+	authDomain: "joust-50b62.firebaseapp.com",
+	databaseURL: "https://joust-50b62.firebaseio.com",
+	projectId: "joust-50b62",
+	storageBucket: "joust-50b62.appspot.com",
+
+};
+
+  
+
+
+
+  var config = {
+    apiKey: "AIzaSyAzN8XmH6L29WT0LF2DeL-qv8pMC6V8aNw",
+    authDomain: "mymudemo.firebaseapp.com",
+    databaseURL: "https://mymudemo.firebaseio.com",
+    storageBucket: "mymudemo.appspot.com"
+  };
+  firebase.initializeApp(config);
+  // Get a reference to the database service
+  var database = firebase.database();
+</script>
+
+
+
+
+<script>
+
+function doLogin()
+{
+	username=document.getElementById("uname").value
+	password=document.getElementById("pass").value
+
+	firebase
+		.auth()
+		.signInWithEmailAndPassword(username, password)
+		.then(watchInbox)
+		.catch(function(error) {
+		  // Handle Errors here.
+		  var errorCode = error.code;
+		  var errorMessage = error.message;
+		  console.error(errorMessage)
+		});
+}
+
+
+function watchInbox(user)
+{
+	console.log(user)
+	console.log("Watching inbox for uid:",user.uid)
+
+	try
+	{
+		var mymailboxlocation='/users/'+user.uid+'/inbox'
+
+		var mydata = database.ref(mymailboxlocation);
+
+		mydata.on('value',
+		  function(snapshot)
+		  {
+		  	console.log("got snapshot")
+			var result=snapshot.val()
+			result=JSON.stringify(result,null,4)
+		    document.getElementById("placeholder").innerHTML="<pre>"+result+"</pre>"
+		  }
+		);
+	}
+	catch(err)
+	{
+		console.log(err)
+	}
+}
+
+</script>
+
+
+
+
+
+</body>
+</html>
