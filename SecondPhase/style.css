@@ -1,334 +1,16 @@
-/*Global*/
+*{
+  box-sizing: border-box;
+}
 
 body{
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  line-height: 1.5;
-  padding: 0;
-  margin: 0;
-  background-color: #f4f4f4;
+  background:#92bde7;
+  color:#485e74;
+  line-height:1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding:1em;
 }
 
 .container{
-  width: 80%;
-  margin:auto;
-  overflow: hidden;
-}
-
-.button1{
-  height: 38px;
-  background: #e8491d;
-  border: 0;
-  padding-left: 20px;
-  padding-right: 20px;
-  color: #ffffff;
-}
-
-.dark{
-  padding: 15px;
-  background: #35424a;
-  color: #ffffff;
-  margin-top: 10px;
-  margin-bottom: 10px;
-
-}
-
-.dark2{
-  padding: 15px;
-  width: 20%;
-  background: #35424a;
-  color: #ffffff;
-  margin-top: 10px;
-  margin-bottom: 10px;
-
-}
-
-.outline{
-
-
-  color: white;
-      text-shadow:
-      -1px -1px 0 #000,
-      1px -1px 0 #000,
-      -1px 1px 0 #000,
-      1px 1px 0 #000;
-
-
-}
-
-.button {
-  background: #e8491d;
-  background-image: -webkit-linear-gradient(top, #e8491d, #e8491d);
-  background-image: -moz-linear-gradient(top, #e8491d, #e8491d);
-  background-image: -ms-linear-gradient(top, #e8491d, #e8491d);
-  background-image: -o-linear-gradient(top, #e8491d, #e8491d);
-  background-image: linear-gradient(to bottom, #e8491d, #e8491d);
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0px;
-  -webkit-box-shadow: 0px 1px 3px #666666;
-  -moz-box-shadow: 0px 1px 3px #666666;
-  box-shadow: 0px 1px 3px #666666;
-  font-family: Arial;
-  color: #35424a;
-  font-size: 20px;
-  padding: 8px 20px 10px 20px;
-  text-decoration: none;
-}
-
-
-.button:hover {
-  background: #ffffff;
-  background-image: -webkit-linear-gradient(top, #ffffff, #ffffff);
-  background-image: -moz-linear-gradient(top, #ffffff, #ffffff);
-  background-image: -ms-linear-gradient(top, #ffffff, #ffffff);
-  background-image: -o-linear-gradient(top, #ffffff, #ffffff);
-  background-image: linear-gradient(to bottom, #ffffff, #ffffff);
-  text-decoration: none;
-}
-
-ul {
- margin:0;
- padding: 0;
-
-}
-
-title{
-
-
-
-
-
-
-
-}
-
-header{
-  background: #35424a;
-  color: #ffffff;
-  padding-top: 30px;
-  min-height: 70px;
-  border-bottom: #e8491d 3px solid;
-}
-
-header a {
-  color: #ffffff;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 16px;
-}
-
-
-header li{
-  float: left;
-  display: inline;
-  padding: 0 20px 0 20px;
-}
-
-header #branding {
-  float: left;
-}
-
-header #branding h1{
-  margin: 0;
-}
-
-header nav{
-  float: right;
-  margin-top: 10px;
-}
-
-header .heighlight, header .current a{
-  color: #e8491d;
-  font-weight: bold;
-
-}
-
-header a:hover{
-  color: #cccccc;
-  font-weight: bold;
-}
-
-
-/*showcase*/
-
-#showcase{
-  min-height:400px;
-  background-image: url('../SecondPhase/img/showcase.png');
-  text-align: center;
-  color: #ffffff;
-
-
-}
-
-
-#showcaseprofile{
-  min-height:400px;
-  background-image: url('../SecondPhase/img/showcaseprofile.jpg');
-  text-align: center;
-  color: #ffffff;
-
-
-}
-
-
-
-
-#showcase h1{
-margin-top:100px;
-font-size: 55px;
-margin-bottom: 10px;
-
-}
-
-#showcase p {
-  font-size: 20px;
-}
-
-
-
-/*newsletter*/
-
-#newsletter{
-  padding: 15px;
-  color: #ffffff;
-  background: #35424a;
-
-}
-
-#newsletter h1{
-  float: left;
-}
-
-#newsletter form{
-  float: right;
-  margin-top: 15px;
-
-}
-
-#newsletter input[type = "email"]{
-  padding: 4px;
-  height: 25px;
-  width: 250px;
-
-}
-
-
-/* boxex*/
-
-
-
-
-#boxes{
-  margin-top: 20px;
-
-}
-
-#boxes .box{
-  float: left;
-  text-align: center;
-  width 30%;
-  padding: 10px;
-
-}
-
-/*Sidebar*/
-
-aside#sidebar{
-
-  float: right;
-  width: 30%;
-  margin-top:  10px;
-
-}
-
-/* main-col*/
-article#main-col{
-  float: left;
-  width: 65%
-
-}
-
-footer{
-  padding: 20px;
-  margin-top: 20px;
-  color: #ffffff;
-  background-color: #e8491d;
-  text-align: center;
-}
-
-
-
-/* Profile page*/
-
-{
-    box-sizing: border-box;
-}
-
-/* Create three equal columns that floats next to each other */
-.column {
-    float: left;
-    width: 30%;
-    padding: 10px;
-    text-align: center;
-
-}
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
-    .column {
-        width: 100%;
-    }
-}
-
-.boarderBox{
-  padding-bottom: 5px;
-border: 2px solid red;
-    border-radius: 12px;
-  }
-
-
-
-/* Overall Leaderboard Page*/
-
-.inner-table-background {
-  background-color:Gainsboro ;
-  padding-top: 10%;
-   padding-right: 20%;
-   padding-bottom: 10%;
-  border-radius: 10px;
-   padding-left: 20%;
-}
-
-
-.tg  {border-collapse:collapse;border-spacing:0;border-color:#999;width: 80%;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#35424a;}
-.tg .tg-vn4c{background-color:#e8491d}
-
-
-.organefont{
-  color: #e8491d;
-  font-weight: bold;
-  font-size: 40px
-  }
-
-
-
-
-
-
-
-/* Wills Style*/
-
-.container1{
   max-width:1170px;
   margin-left:auto;
   margin-right:auto;
@@ -345,7 +27,7 @@ ul{
 }
 
 .brand span{
-  color:#e8491d;
+  color:#fff;
 }
 
 .wrapper{
@@ -357,7 +39,7 @@ ul{
 }
 
 .company-info{
-  background:#e8491d;
+  background:#c9e6ff;
 }
 
 .company-info h3, .company-info ul{
@@ -391,17 +73,17 @@ ul{
 .contact form button, .contact form input, .contact form textarea{
   width:100%;
   padding:1em;
-  border:1px solid #e8491d;
+  border:1px solid #c9e6ff;
 }
 
 .contact form button{
-  background:#e8491d;
+  background:#c9e6ff;
   border:0;
   text-transform: uppercase;
 }
 
 .contact form button:hover,.contact form button:focus{
-  background:#35424a;
+  background:#92bde7;
   color:#fff;
   outline:0;
   transition: background-color 2s ease-out;
@@ -421,41 +103,4 @@ ul{
   .company-info h3, .company-info ul, .brand{
     text-align: left;
   }
-}
-
-
-* {
-    box-sizing: border-box;
-}
-
-
-/*Boxes for login area*/
-
-/* Create two equal columns that floats next to each other */
-.column1 {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    height: 100px; /* Should be removed. Only for demonstration */
-}
-
-/* Clear floats after the columns */
-.row1:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-
-
-.testbox{
-
-  width: 80%;
-      border: 5px;
-
-      margin: 4px;
-      padding-right:  20px;
-
-
-
 }

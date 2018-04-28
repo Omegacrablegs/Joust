@@ -1,4 +1,3 @@
-// Initialize Firebase (ADD YOUR OWN DATA)
 var config = {
   apiKey: "AIzaSyDYoo1Aq-XSfHHtV_-PdJImtcw2cdm-GDU",
   authDomain: "joust-50b62.firebaseapp.com",
@@ -9,10 +8,8 @@ var config = {
 };
 firebase.initializeApp(config);
 
-// Reference messages collection
-var messagesRef = firebase.database().ref('Jousters');
 
-
+var messagesRef = firebase.database().ref('Leaderboard');
 // Listen for form submit
 document.getElementById('contactForm').addEventListener('submit', submitForm);
 
@@ -21,39 +18,27 @@ function submitForm(e){
   e.preventDefault();
 
   // Get values
-  var firstname = getInputVal('firstname');
-  var lastname = getInputVal('lastname');
-  var age = getInputVal('age');
-  var email = getInputVal('email');
-  var location = getInputVal('address');
+  var name = getInputVal('name');
+  var steps = getInputVal('steps');
 
 
-  saveMessage(firstname, lastname, age, email, location);
+  // Save message
+  saveMessage(name, steps);
 
-  document.querySelector('.alert').style.display = 'block';
-
-  setTimeout(function(){
-    document.querySelector('.alert').style.display = 'none';
-  },3000);
-
-
+  // Clear form
   document.getElementById('contactForm').reset();
 }
 
-
+// Function to get get form values
 function getInputVal(id){
   return document.getElementById(id).value;
 }
 
 // Save message to firebase
-function saveMessage(firstname, lastname, age, email, location){
+function saveMessage(name, steps){
   var newMessageRef = messagesRef.push();
   newMessageRef.set({
-    firstname:firstname,
-    lastname:lastname,
-    age:age,
-    email:email,
-    location:location
-
+    name:name,
+    steps:steps
   });
 }
