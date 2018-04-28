@@ -1,29 +1,151 @@
 <!DOCTYPE html>
 <html>
+<head>
 
-  <body>
+    <title>Joust Social Fitness Experience</title>
+    <meta charset="utf-8">
+    <meta name="viewport" onload=""content="width=device-width">
+    <meta name="description" content= "Social fitness Experience">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Google Login Scripts -->
+
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="883242459172-c5kme6phtg6abibcutqcne6amfe3iosd.apps.googleusercontent.com">
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+</head>
+<body>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<header>
 
     <div class="container">
-      <input id="txtEmail" type="email" placeholder="Email">
 
-      <input id="txtPassword" type="password" placeholder="Password">
+        <div id="branding">
+            <h1 class="current"> <a href = "index.html"/> Joust </h1>
+        </div>
 
-      <button id="btnLogin" class="btn btn-action">
-        Log in
-      </button>
+        <nav>
+            <ul>
+                <li class="current"><a href = "index.html">Home</a></li>
+                <li><a href = "profile.html">Profile</a></li>
+                <li><a href = "leaderboard.html">Leaderboard</a></li>
+            </ul>
+        </nav>
 
-      <button id="btnSignUp" class="btn btn-secondary">
-        Sign Up
-      </button>
+    </div>
+</header>
 
-      <button id="btnLogout" class="btn btn-action hide">
-        Log Out
-      </button>
+<section id="showcase">
+    <div class="container">
+        <h1 class = "outline">Joust Social Fitness Experince</h1>
+        <p class = "outline">Join, create Groups and compete against your freinds</p>
+    </div>
+</section>
+
+<!--change this to login section -->
+
+
+
+
+
+<div class="row">
+
+
+    <div class="column1" style="background-color:#35424a;">
+
+        <div class="testbox">
+
+            <font color="white">Login in with your Google Fit Account</font>
+            <p>         </p>
+            <div class="g-signin2" data-onsuccess="onSignIn" ></div>
+        </div>
+
     </div>
 
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-    <script src="app.js"></script>
-    
+    <div class="column1" style="background-color:#35424a;">
 
-  </body>
-  </html>
+
+
+        <input id="txtEmail" type="email" placeholder="Email">
+
+        <input id="txtPassword" type="password" placeholder="Password">
+
+        <button id="btnLogin" class="btn btn-action">
+            Log in
+        </button>
+
+        <button id="btnSignUp" class="btn btn-secondary">
+            Sign Up
+        </button>
+
+        <button id="btnLogout" class="btn btn-action hide">
+            Log Out
+        </button>
+
+
+        <div  : left;>
+
+
+            <p color = "white"><a href = "index2.html" align = "center"  class="button">Register</a></p>
+
+        </div>
+
+
+
+
+    </div>
+</div>
+
+<section id= "boxes">
+    <div class="container">
+        <div class="box">
+            <img src="./img/sneaker.png" alt="ss">
+            <h3>Count Steps</h3>
+            <p>Walking is the simplest form of exercise, and using a pedometer is a good way to get yourself to do it. Experts say that while 10,000 steps a day is a good number to reach.</p>
+        </div>
+        <div class="box">
+            <img src="./img/medal.png" alt="ss">
+            <h3>Compete Against Friends</h3>
+            <p>Play friend against friend to see who can earn the most steps. Challenge your friends and put the muscle behind the hustle.  Get in shape while taunting your friends.</p>
+        </div>
+        <div class="box">
+            <img src="./img/group-of-men.png" alt="ss">
+            <h3>Make Friends</h3>
+            <p>The runner’s high: Every athlete has heard of it, most seem to believe in it and many say they have experienced it. But for years scientists have reserved judgment because no rigorous test confirmed its existence.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p> Joust , Copyright &copy; 2018  </p>
+    </footer>
+
+</section>
+
+
+<script>
+    // Google User
+    function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+    };
+</script>
+
+
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
